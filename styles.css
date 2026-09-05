@@ -1,0 +1,4 @@
+.patina-preview-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.patina-report { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 60vh; overflow: auto; padding: 1rem; background: var(--background-secondary); border-radius: var(--radius-m); }
+.patina-warning { color: var(--text-warning); }
+@media (max-width: 720px) { .patina-preview-grid { grid-template-columns: 1fr; } }
