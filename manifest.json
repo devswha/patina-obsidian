@@ -1,0 +1,10 @@
+{
+  "id": "patina-humanizer",
+  "name": "Patina Humanizer",
+  "version": "1.0.0",
+  "minAppVersion": "1.13.7",
+  "description": "Inspect writing signals locally and review verified Patina CLI rewrites before applying them.",
+  "author": "devswha",
+  "authorUrl": "https://github.com/devswha",
+  "isDesktopOnly": true
+}
