@@ -64,7 +64,8 @@ try {
   mkdirSync('artifacts', { recursive: true });
   await capturePreview();
   await evaluate(`[...__p.modals].find(m=>m.contentEl.querySelector('.patina-preview-grid')).contentEl.querySelectorAll('button')[0].click();`);
-  await evaluate('__pending'); assert.equal(await evaluate('__v.editor.getValue()===__original'), true);
+  const discarded = await evaluate('__pending'); assert.equal(discarded.ok, true);
+  assert.equal(await evaluate('__v.editor.getValue()===__original'), true);
   await evaluate(`__v.editor.setSelection({line:0,ch:0},{line:0,ch:15});window.__pending=__p.controller.rewrite(__v.editor,__v).then(()=>({ok:true})).catch(e=>({error:e.message}));undefined;`);
   await waitForModal(); await evaluate(`[...__p.modals].find(m=>m.contentEl.querySelector('.patina-preview-grid')).contentEl.querySelectorAll('button')[1].click();`);
   const applied = await evaluate('__pending'); assert.equal(applied.ok, true);
